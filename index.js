@@ -20,12 +20,27 @@ mongoose
     // Run your code here, after you have insured that the connection was made
 
     // Iteration 2
-    // const recipe = await Recipe.create(data[0]);
+    const recipe = await Recipe.create({
+      "title": "Spaghetti without anything",
+      "level": "Amateur Chef",
+      "ingredients": [
+        "150g Spaghetti",
+        "2 tea spoons salt",
+        "butter"
+      ],
+      "cuisine": "Italian",
+      "dishType": "main_course",
+      "image": "https://images.media-allrecipes.com/userphotos/720x405/815964.jpg",
+      "duration": 15,
+      "creator": "5 year old kid"
+    });
     
 
+    console.log(recipe)
+    // Iteration 3
     const recipes = await Recipe.create(data);
 
-    console.log(recipes)
+    // console.log(recipes)
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
