@@ -22,7 +22,7 @@ mongoose
     // Iteration 2
     const {title} = await Recipe.create({
       "title": "Spaghetti without anything",
-      "level": "Amateur Chef",
+      "level": "Easy Peasy",
       "ingredients": [
         "150g Spaghetti",
         "2 tea spoons salt",
@@ -43,7 +43,13 @@ mongoose
 
     recipes.forEach(recipe => console.log(recipe.title));
 
-    // console.log(recipes)
+
+    // Iteration 4
+    const updatedRecipe = await Recipe.findOneAndUpdate({title: "Rigatoni alla Genovese"}, {duration: 100})
+
+    console.log(`Recipe for ${updatedRecipe.title} has been successfully updated from duration: ${updatedRecipe.duration} to duration: 100`);
+
+    
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
