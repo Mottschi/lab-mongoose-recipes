@@ -31,9 +31,12 @@ const recipeSchema = new Schema({
   creator: String,
   created: {
     type: Date,
-    default: Date('2023-02-10')
+    // default: Date('2023-02-10')
+    // as today can be different, setting it to literally the today of the day the code was written is not ideal
+    // some alternative takes that I like better then just manually setting the date to today:
     // default: Date.now()
     // default: ()=> Date.now()
+    default: Date.now // simplified version of the one right above, as Date.now is already a function, don't need to create arrow function
   }
 });
 

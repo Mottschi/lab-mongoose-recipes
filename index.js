@@ -20,17 +20,18 @@ mongoose
     // Run your code here, after you have insured that the connection was made
 
     // Iteration 2
-    const recipe = await Recipe.create(data[0]);
+    // const recipe = await Recipe.create(data[0]);
     
 
+    const recipes = await Recipe.create(data);
 
-
-
+    console.log(recipes)
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
   })
   .finally(()=>{
+    // Iteration 6
     console.log('closing up')
     mongoose.connection.close();
   });
