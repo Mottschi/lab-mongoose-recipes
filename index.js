@@ -45,7 +45,7 @@ mongoose
 
 
     // Iteration 4
-    const updatedRecipe = await Recipe.findOneAndUpdate({title: "Rigatoni2 alla Genovese"}, {duration: 100});
+    const updatedRecipe = await Recipe.findOneAndUpdate({title: "Rigatoni alla Genovese"}, {duration: 100});
 
     console.log(`Iteration 4: Recipe for ${updatedRecipe.title} has been successfully updated from duration: ${updatedRecipe.duration} to duration: 100`);
 
