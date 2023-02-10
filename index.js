@@ -32,7 +32,7 @@ mongoose
       "dishType": "main_course",
       "image": "https://images.media-allrecipes.com/userphotos/720x405/815964.jpg",
       "duration": 15,
-      "creator": "5 year old kid"
+      "creator": "some 5 year old kid"
     });
     
 
