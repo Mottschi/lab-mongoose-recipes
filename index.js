@@ -41,7 +41,7 @@ mongoose
     // Iteration 3
     const recipes = await Recipe.create(data);
     console.log('Iteration 3:');
-    recipes.forEach(recipe => console.log(recipe.title));
+    recipes.forEach(recipe => console.log('\t', recipe.title));
 
 
     // Iteration 4
