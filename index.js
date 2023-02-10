@@ -19,7 +19,8 @@ mongoose
   .then(async () => {
     // Run your code here, after you have insured that the connection was made
 
-    // Iteration 2
+    try {
+      // Iteration 2
     const {title} = await Recipe.create({
       "title": "Spaghetti without anything",
       "level": "Easy Peasy",
@@ -35,19 +36,27 @@ mongoose
       "creator": "some 5 year old kid"
     });
     
-
-    console.log(title)
+    console.log("Iteration 2:", title);
 
     // Iteration 3
     const recipes = await Recipe.create(data);
-
+    console.log('Iteration 3:');
     recipes.forEach(recipe => console.log(recipe.title));
 
 
     // Iteration 4
-    const updatedRecipe = await Recipe.findOneAndUpdate({title: "Rigatoni alla Genovese"}, {duration: 100})
+    const updatedRecipe = await Recipe.findOneAndUpdate({title: "Rigatoni2 alla Genovese"}, {duration: 100});
 
-    console.log(`Recipe for ${updatedRecipe.title} has been successfully updated from duration: ${updatedRecipe.duration} to duration: 100`);
+    console.log(`Iteration 4: Recipe for ${updatedRecipe.title} has been successfully updated from duration: ${updatedRecipe.duration} to duration: 100`);
+
+
+    // Iteration 5
+    await Recipe.deleteOne({title: 'Carrot Cake'});
+    console.log("Iteration 5: The cake was a lie");
+
+    } catch (error) {
+      console.log(error)
+    }
 
     
   })
@@ -56,6 +65,6 @@ mongoose
   })
   .finally(()=>{
     // Iteration 6
-    console.log('closing up')
+    console.log('Iteration 6: closing up')
     mongoose.connection.close();
   });
