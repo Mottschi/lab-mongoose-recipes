@@ -20,13 +20,13 @@ mongoose
     // Run your code here, after you have insured that the connection was made
 
     // Iteration 2
-    const recipe = await Recipe.create({
+    const {title} = await Recipe.create({
       "title": "Spaghetti without anything",
       "level": "Amateur Chef",
       "ingredients": [
         "150g Spaghetti",
         "2 tea spoons salt",
-        "butter"
+        "some spoons of butter to taste"
       ],
       "cuisine": "Italian",
       "dishType": "main_course",
@@ -36,9 +36,12 @@ mongoose
     });
     
 
-    console.log(recipe)
+    console.log(title)
+
     // Iteration 3
     const recipes = await Recipe.create(data);
+
+    recipes.forEach(recipe => console.log(recipe.title));
 
     // console.log(recipes)
   })
