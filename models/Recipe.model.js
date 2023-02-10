@@ -31,9 +31,9 @@ const recipeSchema = new Schema({
   creator: String,
   created: {
     type: Date,
-    // default: Date('2023-02-10')
+    default: Date('2023-02-10')
     // default: Date.now()
-    default: ()=> Date.now()
+    // default: ()=> Date.now()
   }
 });
 
